@@ -1,0 +1,39 @@
+IPCV2 Group Project: Meeting 3
+Date: Thursday, March 28th
+Time: ~8:30pm
+Location: WAL 3415
+Members Absent: N/A
+
+Wade is making a CMAKE environment :D
+ -Using GitHub yeehaw
+
+Using one file or...? 
+ - Yes. One file. One and done.
+
+Move scan sheet files into the GitHub Repo
+ - DONE (aye bb git 'er done)
+
+Wade will be uploading the .cpp file to the GitHub
+ - Yeehaw
+
+----------------
+
+Objective: ?
+
+ -
+
+
+
+Method Ideas: ?
+
+ - Hough Circles? 
+
+
+Playing around with file version on the cpp file
+
+Figuring out git
+ - Yawhee
+
+
+Meeting adjourned: ~9:30pm
+
