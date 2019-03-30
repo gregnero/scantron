@@ -81,11 +81,31 @@ int main(int argc, char* argv[]) {
 
   cv::filter2D(gray, gauss, CV_32FC1, gaussFilter); //Convolve gray image with gaussian filter
   
-  // Apply adaptive thresholding (NOTE: The blank scan tron sheet is technically already binary!)
+  // Apply global threhsolding (NOTE: The blank scan tron sheet is technically already binary!)
   cv::Mat binary;
   gauss.convertTo(gauss,src.type()); 
   
-  cv::adaptiveThreshold(gauss, binary, 255, cv::ADAPTIVE_THRESH_MEAN_C,cv::THRESH_BINARY,7, 7); //3rd parameter scales binary mat to 0s and 255s
+  cv::Mat stdDev;
+  cv::Mat mean;
+  cv::meanStdDev(src, mean, stdDev);
+  double T = 255 - stdDev.at<double>(0,0); //Clip/threshold value (This threshold value is experimental)
+  
+  cv::threshold(gauss,binary,T,255,cv::THRESH_BINARY_INV); //Inverse is taken so it works with morphology 
+  
+  //Morphology
+    //Dilation (Strengthens the bubbled circles)
+  cv::Mat dilate;
+  
+  cv::Mat kernelDilate = cv::getStructuringElement(cv::MORPH_DILATE, cv::Point(9,9));
+  cv::dilate(binary, dilate, kernelDilate);
+  
+    //Erosion (Removes noise)
+  cv::Mat erode;
+  
+  cv::Mat kernelErosion = cv::getStructuringElement(cv::MORPH_ERODE, cv::Point(3,3));
+  cv::erode(dilate, erode, kernelErosion);
+  
+  erode = ~erode; //Invert the image
   
   /*************************************************************************************************/
   
@@ -99,7 +119,11 @@ int main(int argc, char* argv[]) {
   
   cv::namedWindow("src",cv::WINDOW_NORMAL); 
   cv::resizeWindow("src", 800,800); //Cause this image is fooking huuugggee
-  cv::imshow("src",binary);
+  cv::imshow("src",src);
+  
+  cv::namedWindow("erode",cv::WINDOW_NORMAL); 
+  cv::resizeWindow("erode", 800,800); //Cause this image is fooking huuugggee
+  cv::imshow("erode",erode);
   cv::waitKey(0);
 
 
