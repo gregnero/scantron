@@ -1,0 +1,46 @@
+IPCV2 Group Project: Meeting 4
+Date: Sunday, April 7th
+Time: 9:00pm
+Location: Lodge 55
+Members Absent: N/A
+
+Wade: "We have some good stuff going on."
+
+Wade has made some good progress! Fuck yeah boiiii!
+Bless up
+
+Vlad: "Yeah, I can do perspective transforms."
+
+
+Greg will be looking into how Hough Circles works
+-for the paper/presentation
+
+Do we need clean code? Eh, maybe. 
+
+Deadlines??
+
+ -Presentation: last two days of classes? (April 23rd) 
+ -Due: April 25th
+
+Smith is making the Latex doc and uploading the link to the GitHub.
+Smith is also taking care of starting a Google Slides for the pressentation.
+
+Slides vs PowerPoint? Slides, more collaborative.
+
+Make directory to store doc and slides.
+ -To store content (figures, etc.) as well
+ -dirname: symposium
+
+
+Code description from devs (code is also commented) for "outreach"
+ -Need overarching ideas for those who are writing doc/slides
+ -Comments should suffice
+
+
+Moving forward: Goals?
+ -Shortterm: Intro/background for paper written, start algo portion as well (maybe), section headers for Latex doc
+	     Vlad getting his stuff done ("Tonight/tomorrow")
+ -Longterm: pretty much shortterm, we running out of time eeek
+
+
+Formalities Adjourned ~9:30pm
